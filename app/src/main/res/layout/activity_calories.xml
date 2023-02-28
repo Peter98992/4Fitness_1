@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_calories">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#56000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardBackgroundColor="#e5e5e5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/viewAnalyticsCardView"
+        app:layout_constraintStart_toStartOf="@+id/changeKGCardView"
+        app:layout_constraintTop_toBottomOf="@+id/viewAnalyticsCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="#1e1b42"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/image_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/set_goals"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/setWeightButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/input_bg_color"
+                android:padding="10dp"
+                android:text="@string/weight"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/setKcalButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setKcalButton" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/setKcalButton"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/input_bg_color"
+                android:padding="10dp"
+                android:text="@string/kcal_day"
+                app:layout_constraintBottom_toTopOf="@+id/resetToDefaultButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setWeightButton"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/resetToDefaultButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/input_bg_color"
+                android:padding="10dp"
+                android:text="@string/reset_to_default"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/setMacrosButton"
+                app:layout_constraintTop_toBottomOf="@+id/setKcalButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/setMacrosButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/input_bg_color"
+                android:padding="10dp"
+                android:text="@string/macros"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/resetToDefaultButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setWeightButton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#e5e5e5"
+        android:id="@+id/viewAnalyticsCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/changeKGCardView"
+        app:layout_constraintEnd_toEndOf="@+id/addMealCardView"
+        app:layout_constraintStart_toEndOf="@+id/changeKGCardView"
+        app:layout_constraintTop_toTopOf="@+id/changeKGCardView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/view_nanalytics"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#e5e5e5"
+        android:id="@+id/changeKGCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/addMealCardView"
+        app:layout_constraintTop_toBottomOf="@+id/addMealCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:textColor="#6d6d6d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/kg"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/KgTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/KgTextView" />
+
+            <TextView
+                android:id="@+id/KgTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintBottom_toTopOf="@+id/textForButtonChangeWeight"
+                app:layout_constraintEnd_toEndOf="@+id/textForButtonChangeWeight"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="@+id/textForButtonChangeWeight" />
+
+            <ImageView
+                android:id="@+id/changeWeightImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#1e1b42"
+                android:clickable="true"
+                android:contentDescription="@string/image_background"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/KgTextView"
+                app:layout_constraintTop_toBottomOf="@+id/KgTextView" />
+
+            <TextView
+                android:id="@+id/textForButtonChangeWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/change"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#e5e5e5"
+        android:id="@+id/addMealCardView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_mealRC"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardBackgroundColor="#e5e5e5"
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/kcalProgressIndicator"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:progress="0"
+                app:indicatorColor="#1e1b42"
+                app:indicatorSize="160dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:trackColor="#a197a6"
+                app:trackCornerRadius="4dp"
+                app:trackThickness="14dp" />
+
+            <TextView
+                android:textColor="#6d6d6d"
+                android:id="@+id/kcalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/goalKcalTextView"
+                app:layout_constraintEnd_toEndOf="@+id/kcalProgressIndicator"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/kcalProgressIndicator"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:textColor="#6d6d6d"
+                android:id="@+id/goalKcalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/of_0_kcalER"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/kcalProgressIndicator"
+                app:layout_constraintEnd_toEndOf="@+id/kcalProgressIndicator"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/kcalProgressIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/kcalTextView" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/proteins"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/proteinsProgressIndicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kcalProgressIndicator" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fats"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fatsProgressIndicator"
+                app:layout_constraintStart_toStartOf="@+id/fatsProgressIndicator" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carbs"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/carbsProgressIndicator"
+                app:layout_constraintStart_toStartOf="@+id/carbsProgressIndicator" />
+
+
+            <TextView
+                android:id="@+id/proteinTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/proteinsProgressIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/proteinsProgressIndicator" />
+
+            <TextView
+                android:id="@+id/fatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/fatsProgressIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/fatsProgressIndicator" />
+
+            <TextView
+                android:id="@+id/carbsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/carbsProgressIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/carbsProgressIndicator" />
+
+            <TextView
+                android:textColor="#6d6d6d"
+                android:id="@+id/goalProteinsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/of_0g"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/proteinTextView"
+                app:layout_constraintStart_toEndOf="@+id/proteinTextView"
+                app:layout_constraintTop_toTopOf="@+id/proteinTextView" />
+
+            <TextView
+                android:id="@+id/goalFatsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/of_0g"
+                android:textColor="#6d6d6d"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/fatsTextView"
+                app:layout_constraintStart_toEndOf="@+id/fatsTextView"
+                app:layout_constraintTop_toTopOf="@+id/fatsTextView" />
+
+            <TextView
+                android:id="@+id/goalCarbsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/of_0g"
+                android:textColor="#6d6d6d"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/carbsTextView"
+                app:layout_constraintStart_toEndOf="@+id/carbsTextView"
+                app:layout_constraintTop_toTopOf="@+id/carbsTextView" />
+
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/proteinsProgressIndicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:progress="0"
+                app:indicatorColor="#1e1b42"
+                app:layout_constraintEnd_toStartOf="@+id/fatsProgressIndicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kcalProgressIndicator"
+                app:trackColor="#a197a6"
+                app:trackCornerRadius="4dp"
+                app:trackThickness="8dp" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/fatsProgressIndicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:progress="0"
+                app:indicatorColor="#1e1b42"
+                app:layout_constraintEnd_toStartOf="@+id/carbsProgressIndicator"
+                app:layout_constraintStart_toEndOf="@+id/proteinsProgressIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/kcalProgressIndicator"
+                app:trackColor="#a197a6"
+                app:trackCornerRadius="4dp"
+                app:trackThickness="8dp" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/carbsProgressIndicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:progress="0"
+                app:indicatorColor="#1e1b42"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fatsProgressIndicator"
+                app:layout_constraintTop_toBottomOf="@+id/kcalProgressIndicator"
+                app:trackColor="#a197a6"
+                app:trackCornerRadius="4dp"
+                app:trackThickness="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
