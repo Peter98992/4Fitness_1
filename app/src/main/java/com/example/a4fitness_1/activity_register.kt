@@ -47,7 +47,7 @@ class activity_register : AppCompatActivity() {
         emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
         inputPasswordConfirm = findViewById(R.id.input_passwordConfirm)
         inputPassword = findViewById(R.id.input_password)
-        inputEmail = findViewById(R.id.input_email)
+        inputEmail = findViewById(R.id.input_name)
 
 
         val email = inputEmail.text.toString()
@@ -87,9 +87,9 @@ class activity_register : AppCompatActivity() {
 
 
     private fun sendUserToNextActivity() {
-        val intentToMainActivity = Intent(this, MainActivity::class.java)
+        val intentToStartActivity = Intent(this, start_page::class.java)
         finish()
-        startActivity(intentToMainActivity)
+        startActivity(intentToStartActivity)
     }
 
 }

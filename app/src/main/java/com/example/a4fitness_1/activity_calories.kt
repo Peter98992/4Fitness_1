@@ -14,7 +14,7 @@ import android.widget.EditText
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
-
+import java.util.regex.Pattern
 class activity_calories : AppCompatActivity() {
 
 
@@ -26,54 +26,32 @@ class activity_calories : AppCompatActivity() {
         // ----------- CHANGE CURRENT WEIGHT---------------
 
 
-        val changeKgButton = findViewById<TextView>(R.id.KgTextView)
-        val popupView = LayoutInflater.from(this).inflate(R.layout.popup_change_kg, null)
-        val popupWindow = PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
 
-        changeKgButton.setOnClickListener {
+        val changeKgButtonView = findViewById<TextView>(R.id.KgTextView)
+        val popupViewChangeKG = LayoutInflater.from(this).inflate(R.layout.popup_change_kg, null)
+        val popupWindow = PopupWindow(popupViewChangeKG, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        val inputKG = popupViewChangeKG.findViewById<EditText>(R.id.input_KG)
+
+        changeKgButtonView.setOnClickListener {
             // OPENS POPUP
             popupWindow.isFocusable = true
             popupWindow.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             popupWindow.showAtLocation(findViewById(R.id.KgTextView),Gravity.CENTER, 0, 0)
 
-            popupView.setOnClickListener{
-                popupView.findViewById<AppCompatButton>(R.id.enterKgButton).setOnClickListener {
+            popupViewChangeKG.setOnClickListener{
+                popupViewChangeKG.findViewById<AppCompatButton>(R.id.enterKgButton).setOnClickListener {
+
+                    changeKgButtonView.text = inputKG.text.toString()
                     popupWindow.dismiss()
+
+
                 }
 
             }
 
         }
 
-        // GETTING THE VIEWS
-        val popupViewChangeCurrentKG = LayoutInflater.from(this).inflate(R.layout.popup_change_kg, null)
-        val inputChangeCurrentKg = popupViewChangeCurrentKG.findViewById<EditText>(R.id.input_KG)
-        val buttonChangeCurrentKg = popupViewChangeCurrentKG.findViewById<AppCompatButton>(R.id.enterKgButton)
-
-        // THE FUNCTION
-
-
-
-
-
     }
 
-
-    // ------------------ POPUP FUNCTIONS ----------------------
-
-    //POPUP TO CHANGE WEIGHT
-
-
-    private fun changeCurrentKg() {
-        val popupViewChangeCurrentKG = LayoutInflater.from(this).inflate(R.layout.popup_change_kg, null)
-        val popupWindow = PopupWindow( popupViewChangeCurrentKG, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        val inputChangeCurrentKg = popupViewChangeCurrentKG.findViewById<EditText>(R.id.input_KG)
-        val currentKgTextView = findViewById<TextView>(R.id.KgTextView)
-        popupWindow.dismiss()
-
-
-
-
-    }
 }

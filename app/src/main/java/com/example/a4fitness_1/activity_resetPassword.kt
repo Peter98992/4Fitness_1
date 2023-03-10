@@ -21,7 +21,7 @@ class activity_resetPassword : AppCompatActivity() {
 
         // RESET THE PASSWORD
         resetPasswordButton = findViewById(R.id.button_resetPassword)
-        inputEmail = findViewById(R.id.input_email)
+        inputEmail = findViewById(R.id.input_name)
 
 
         resetPasswordButton.setOnClickListener {

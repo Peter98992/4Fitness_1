@@ -28,7 +28,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/input_bg_color"
                 android:ems="10"
-                android:hint="@string/enter_your_weight"
+                android:hint="@string/enter_your_weight_xx_x_format"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/enterKgButton"

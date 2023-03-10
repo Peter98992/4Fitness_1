@@ -67,4 +67,5 @@
     <string name="_00_0">00.0</string>
     <string name="enter_your_weight">Enter your weight</string>
     <string name="enter">ENTER</string>
+    <string name="enter_your_weight_xx_x_format">Enter your weight (XX.X FORMAT)</string>
 </resources>

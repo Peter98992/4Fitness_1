@@ -26,7 +26,7 @@ class activity_login : AppCompatActivity() {
         //  LOGIN SYSTEM
 
         inputPassword = findViewById(R.id.input_password)
-        inputEmail = findViewById(R.id.input_email)
+        inputEmail = findViewById(R.id.input_name)
         mAuth = FirebaseAuth.getInstance()
         buttonLogin = findViewById(R.id.button_login)
 
@@ -61,7 +61,7 @@ class activity_login : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
         inputPassword = findViewById(R.id.input_password)
-        inputEmail = findViewById(R.id.input_email)
+        inputEmail = findViewById(R.id.input_name)
 
 
         val email = inputEmail.text.toString()
