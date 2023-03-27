@@ -53,6 +53,7 @@
 
 
         <EditText
+            android:inputType="textPersonName"
             android:id="@+id/input_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -86,6 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/input_name" />
 
         <EditText
+            android:inputType="number"
             android:id="@+id/input_baseKg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -118,6 +120,7 @@
             app:layout_constraintTop_toBottomOf="@+id/input_baseKg" />
 
         <EditText
+            android:inputType="number"
             android:id="@+id/input_goalKg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

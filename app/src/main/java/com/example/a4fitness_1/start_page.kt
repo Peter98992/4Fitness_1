@@ -1,13 +1,13 @@
 package com.example.a4fitness_1
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatButton
 
 class start_page : AppCompatActivity() {
 
+    private lateinit var dbHelper: starting_databasehelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,12 +16,22 @@ class start_page : AppCompatActivity() {
 
 
         val buttonContinue = findViewById<TextView>(R.id.textView_Continue)
+        val inputName = findViewById<EditText>(R.id.input_name)
+        val inputCurrentKg = findViewById<EditText>(R.id.input_baseKg)
+        val inputGoalKg = findViewById<EditText>(R.id.input_goalKg)
 
-        buttonContinue.setOnClickListener{
+        dbHelper = starting_databasehelper(this)
+        val db = dbHelper
 
-            val intentToMainActivity = Intent(this, MainActivity::class.java)
-            startActivity(intentToMainActivity)
+
+        buttonContinue.setOnClickListener {
+
+
+
         }
+
+
+
 
 
     }
