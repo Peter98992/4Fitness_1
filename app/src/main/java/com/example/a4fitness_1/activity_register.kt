@@ -74,7 +74,6 @@ class activity_register : AppCompatActivity() {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     sendUserToNextActivity()
-                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "" + task.exception, Toast.LENGTH_SHORT).show()
                 }
@@ -91,6 +90,7 @@ class activity_register : AppCompatActivity() {
         finish()
         startActivity(intentToStartActivity)
     }
+
 
 }
 
