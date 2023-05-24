@@ -69,4 +69,7 @@
     <string name="enter">ENTER</string>
     <string name="enter_your_weight_xx_x_format">Enter your weight (XX.X FORMAT)</string>
     <string name="forum">Forum</string>
+    <string name="quizzes">Quizzes</string>
+    <string name="cancel">CANCEL</string>
+    <string name="use_x_xx_format">Use x.xx format</string>
 </resources>

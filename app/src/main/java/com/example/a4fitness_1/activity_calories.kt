@@ -1,57 +1,54 @@
 package com.example.a4fitness_1
 
-
-import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.PopupWindow
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatButton
-import java.util.regex.Pattern
-class activity_calories : AppCompatActivity() {
+import androidx.appcompat.app.AppCompatActivity
+import com.example.a4fitness_1.DialogChangeCurrentKG.KGDialogListener
 
+class activity_calories : AppCompatActivity(), KGDialogListener {
 
+    private var textViewCurrentKgValue: TextView? = null
+    private var buttonCurrentKg: ImageView? = null
+    private var textViewGoalKgValue: TextView? = null
+    private var buttonSetWeight: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calories)
 
-        // ----------- CHANGE CURRENT WEIGHT---------------
+        //CHANGE CURRENT KG
+        textViewCurrentKgValue = findViewById<View>(R.id.KgTextView) as TextView
 
+        buttonCurrentKg = findViewById(R.id.changeWeightImageView)
+        buttonCurrentKg!!.setOnClickListener { openDialogCurrentKg() }
 
-
-
-        val changeKgButtonView = findViewById<TextView>(R.id.KgTextView)
-        val popupViewChangeKG = LayoutInflater.from(this).inflate(R.layout.popup_change_kg, null)
-        val popupWindow = PopupWindow(popupViewChangeKG, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        val inputKG = popupViewChangeKG.findViewById<EditText>(R.id.input_KG)
-
-        changeKgButtonView.setOnClickListener {
-            // OPENS POPUP
-            popupWindow.isFocusable = true
-            popupWindow.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            popupWindow.showAtLocation(findViewById(R.id.KgTextView),Gravity.CENTER, 0, 0)
-
-            popupViewChangeKG.setOnClickListener{
-                popupViewChangeKG.findViewById<AppCompatButton>(R.id.enterKgButton).setOnClickListener {
-
-                    changeKgButtonView.text = inputKG.text.toString()
-                    popupWindow.dismiss()
-
-
-                }
-
-            }
-
-        }
-
+        // Change Goal KG
+        textViewGoalKgValue = findViewById<View>(R.id.KGBUTTONTEST) as TextView?
+        buttonSetWeight = findViewById(R.id.setWeightButton)
+        buttonSetWeight!!.setOnClickListener { openDialogGoalKg() }
     }
 
+
+    // Functions for changing current KG
+    private fun openDialogCurrentKg() {
+        val dialogChangeCurrentKG = DialogChangeCurrentKG()
+        dialogChangeCurrentKG.show(supportFragmentManager, "Change KG Dialog")
+    }
+
+    override fun applyTextsCurrentKg(value: String?) {
+        textViewCurrentKgValue!!.text = value
+    }
+
+    // Functions for changing goal KG
+    private fun openDialogGoalKg() {
+        val dialogChangeGoalKG = DialogChangeGoalKG()
+        dialogChangeGoalKG.show(supportFragmentManager, "Change KGs Dialog")
+    }
+
+    fun applyTextsGoalKg(valuekg: String?) {
+        textViewGoalKgValue!!.text = valuekg
+    }
 }
+

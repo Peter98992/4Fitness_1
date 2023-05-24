@@ -31,6 +31,31 @@ class MainActivity : AppCompatActivity() {
             val intentForCardCalories = Intent(this, activity_calories::class.java)
             startActivity(intentForCardCalories)
         }
+
+        //OPENS DIET IDEAS ACTIVITY
+        val cardDietIdeas = findViewById<CardView>(R.id.card_diet)
+
+        cardDietIdeas.setOnClickListener {
+            val intentForDietIdeas = Intent(this, activity_webview_recepies::class.java)
+            startActivity(intentForDietIdeas)
+        }
+
+        //OPENS ARTICLES ACTIVITY
+        val cardArticles = findViewById<CardView>(R.id.card_articles)
+
+        cardArticles.setOnClickListener {
+            val intentForCardArticles = Intent(this, activity_webview_articles::class.java)
+            startActivity(intentForCardArticles)
+        }
+
+        //OPENS QUIZZ ACTIVITY
+        val cardQuizz = findViewById<CardView>(R.id.card_quizz)
+
+        cardQuizz.setOnClickListener {
+            val intentForCardQuizz = Intent(this, activity_quizz_main::class.java)
+            startActivity(intentForCardQuizz)
+        }
+
     }
 
     // Do nothing when back is pressed

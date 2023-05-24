@@ -178,11 +178,12 @@
 
 
             <TextView
-                android:textColor="#6d6d6d"
+                android:id="@+id/KGBUTTONTEST"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:text="@string/kg"
+                android:textColor="#6d6d6d"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/KgTextView"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -216,6 +217,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/KgTextView" />
 
             <TextView
+                android:focusable="false"
+                android:clickable="false"
                 android:id="@+id/textForButtonChangeWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

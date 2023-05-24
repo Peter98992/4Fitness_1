@@ -66,7 +66,7 @@
                         android:clickable="true"
                         android:contentDescription="@string/home_button_image_RC"
                         android:focusable="true"
-                        android:src="@drawable/src_house_icon" />
+                        android:src="@drawable/src_home_black" />
 
                     <ImageView
                         android:id="@+id/image_profile"
@@ -76,7 +76,7 @@
                         android:clickable="true"
                         android:contentDescription="@string/profile_button_image_RC"
                         android:focusable="true"
-                        android:src="@drawable/src_profile_icon" />
+                        android:src="@drawable/src_profile_black" />
 
                     <ImageView
                         android:id="@+id/image_goals"
@@ -86,7 +86,7 @@
                         android:clickable="true"
                         android:contentDescription="@string/goals_button_image_RC"
                         android:focusable="true"
-                        android:src="@drawable/src_target_icon" />
+                        android:src="@drawable/src_target_black" />
 
 
                 </RelativeLayout>
@@ -117,15 +117,15 @@
             app:srcCompat="@drawable/background_top_rectangle" />
 
         <ImageView
-            android:id="@+id/logo_activityBar"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:id="@+id/src_logo_gradient"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
             android:contentDescription="@string/logo_topactivitybar_RC"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_nobkg" />
+            app:srcCompat="@drawable/src_logo_gradient" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -145,7 +145,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/settings_button_RC"
                 android:focusable="true"
-                android:src="@drawable/src_settings_icon" />
+                android:src="@drawable/src_settings_black" />
 
         </RelativeLayout>
 
@@ -210,7 +210,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="@string/image_card1_RC"
-                            android:src="@drawable/src_diet_icon" />
+                            android:src="@drawable/src_calories" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -248,7 +248,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="@string/image_card2_RC"
-                            android:src="@drawable/src_diet_icon" />
+                            android:src="@drawable/src_plate" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -287,7 +287,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="@string/image_card3_RC"
-                            android:src="@drawable/src_diet_icon" />
+                            android:src="@drawable/src_shoe" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -325,7 +325,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="@string/image_card4_RC"
-                            android:src="@drawable/src_diet_icon" />
+                            android:src="@drawable/src_dumbell" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -341,7 +341,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card_timer"
+                    android:id="@+id/card_quizz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
@@ -363,14 +363,14 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="@string/image_card5_RC"
-                            android:src="@drawable/src_diet_icon" />
+                            android:src="@drawable/src_question" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
                             android:contentDescription="@string/text_card5_RC"
-                            android:text="@string/forum"
+                            android:text="@string/quizzes"
                             android:textColor="#6f6f6f"
                             android:textSize="18sp" />
 
@@ -401,7 +401,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:contentDescription="@string/image_card6_RC"
-                            android:src="@drawable/src_diet_icon" />
+                            android:src="@drawable/src_newspaper" />
 
                         <TextView
                             android:layout_width="wrap_content"
